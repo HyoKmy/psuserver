@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="JRWT">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.14">
+    <root id="1">
+      <ServerVersion>3.25.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="beacons"/>
+    <table id="7" parent="2" name="locations"/>
+    <table id="8" parent="2" name="media"/>
+    <table id="9" parent="2" name="media_types"/>
+    <table id="10" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="11" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="12" parent="2" name="sqlite_sp_functions"/>
+    <table id="13" parent="2" name="sqlite_stat1"/>
+    <table id="14" parent="2" name="sqlite_stat4"/>
+    <table id="15" parent="2" name="sqlite_vs_links_names"/>
+    <table id="16" parent="2" name="sqlite_vs_properties"/>
+    <table id="17" parent="2" name="sqlite_vsp_diagrams"/>
+    <table id="18" parent="2" name="tour"/>
+    <table id="19" parent="2" name="tour_types"/>
+    <table id="20" parent="2" name="trails"/>
+    <column id="21" parent="6" name="id">
+      <Position>1</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="6" name="latitude">
+      <Position>2</Position>
+      <DataType>Real|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="6" name="longitude">
+      <Position>3</Position>
+      <DataType>Real|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="6" name="title">
+      <Position>4</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="6" name="major">
+      <Position>5</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="6" name="minor">
+      <Position>6</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="6" name="media">
+      <Position>7</Position>
+      <DataType>Text|0s</DataType>
+    </column>
+    <column id="28" parent="6" name="description">
+      <Position>8</Position>
+      <DataType>Text|0s</DataType>
+    </column>
+    <column id="29" parent="6" name="trailhead_photo_id">
+      <Position>9</Position>
+      <DataType>Integer|0s</DataType>
+      <DefaultExpression>-1</DefaultExpression>
+    </column>
+    <index id="30" parent="6" name="sqlite_autoindex_beacons_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_beacons_1</UnderlyingIndexName>
+    </key>
+    <key id="32" parent="6" name="Unique_1">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_beacons_1</UnderlyingIndexName>
+    </key>
+    <column id="33" parent="7" name="id">
+      <Position>1</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="7" name="latitude">
+      <Position>2</Position>
+      <DataType>Real|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="7" name="longitude">
+      <Position>3</Position>
+      <DataType>Real|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="7" name="title">
+      <Position>4</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="37" parent="7" name="sqlite_autoindex_locations_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_locations_1</UnderlyingIndexName>
+    </key>
+    <key id="39" parent="7" name="unique_id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_locations_1</UnderlyingIndexName>
+    </key>
+    <column id="40" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="8" name="title">
+      <Position>2</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="8" name="description">
+      <Position>3</Position>
+      <DataType>Text|0s</DataType>
+    </column>
+    <column id="43" parent="8" name="filename">
+      <Position>4</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="8" name="media_type_id">
+      <Position>5</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="45" parent="8" name="sqlite_autoindex_media_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="46" parent="8" name="sqlite_autoindex_media_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>filename</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_media_1</UnderlyingIndexName>
+    </key>
+    <key id="48" parent="8" name="unique_id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_media_1</UnderlyingIndexName>
+    </key>
+    <key id="49" parent="8" name="unique_filename">
+      <ColNames>filename</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_media_2</UnderlyingIndexName>
+    </key>
+    <column id="50" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="9" name="title">
+      <Position>2</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="52" parent="9" name="sqlite_autoindex_media_types_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="53" parent="9" name="sqlite_autoindex_media_types_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="54" parent="9">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_media_types_1</UnderlyingIndexName>
+    </key>
+    <key id="55" parent="9" name="unique_id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_media_types_1</UnderlyingIndexName>
+    </key>
+    <key id="56" parent="9">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_media_types_2</UnderlyingIndexName>
+    </key>
+    <column id="57" parent="10" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="58" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="59" parent="10" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="60" parent="10" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="61" parent="10" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="62" parent="11" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="63" parent="11" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="64" parent="12" name="name">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="65" parent="12" name="text">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="66" parent="13" name="tbl">
+      <Position>1</Position>
+    </column>
+    <column id="67" parent="13" name="idx">
+      <Position>2</Position>
+    </column>
+    <column id="68" parent="13" name="stat">
+      <Position>3</Position>
+    </column>
+    <column id="69" parent="14" name="tbl">
+      <Position>1</Position>
+    </column>
+    <column id="70" parent="14" name="idx">
+      <Position>2</Position>
+    </column>
+    <column id="71" parent="14" name="neq">
+      <Position>3</Position>
+    </column>
+    <column id="72" parent="14" name="nlt">
+      <Position>4</Position>
+    </column>
+    <column id="73" parent="14" name="ndlt">
+      <Position>5</Position>
+    </column>
+    <column id="74" parent="14" name="sample">
+      <Position>6</Position>
+    </column>
+    <column id="75" parent="15" name="name">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="76" parent="15" name="alias">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="77" parent="16" name="parentType">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="78" parent="16" name="parentName">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="79" parent="16" name="propertyName">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="80" parent="16" name="propertyValue">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="81" parent="17" name="name">
+      <Position>1</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="82" parent="17" name="diadata">
+      <Position>2</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="83" parent="17" name="comment">
+      <Position>3</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="84" parent="17" name="preview">
+      <Position>4</Position>
+      <DataType>TEXT|0s</DataType>
+    </column>
+    <column id="85" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="86" parent="18" name="title">
+      <Position>2</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="18" name="media_ids">
+      <Position>3</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="88" parent="18" name="sqlite_autoindex_tour_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="89" parent="18" name="sqlite_autoindex_tour_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="90" parent="18">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_tour_1</UnderlyingIndexName>
+    </key>
+    <key id="91" parent="18" name="unique_id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_tour_1</UnderlyingIndexName>
+    </key>
+    <key id="92" parent="18" name="unique_title">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_tour_2</UnderlyingIndexName>
+    </key>
+    <column id="93" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="19" name="tour_ids">
+      <Position>2</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="19" name="title">
+      <Position>3</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="96" parent="19" name="sqlite_autoindex_tour_types_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="97" parent="19" name="sqlite_autoindex_tour_types_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="98" parent="19">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_tour_types_2</UnderlyingIndexName>
+    </key>
+    <key id="99" parent="19" name="unique_id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_tour_types_2</UnderlyingIndexName>
+    </key>
+    <key id="100" parent="19">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_tour_types_1</UnderlyingIndexName>
+    </key>
+    <column id="101" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>Integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="102" parent="20" name="title">
+      <Position>2</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="20" name="beacons">
+      <Position>3</Position>
+      <DataType>Text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="20" name="icon_image_id">
+      <Position>4</Position>
+      <DataType>Text|0s</DataType>
+    </column>
+    <index id="105" parent="20" name="sqlite_autoindex_trails_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="106" parent="20" name="sqlite_autoindex_trails_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>icon_image_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="107" parent="20" name="routes_id_idx">
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="108" parent="20">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_trails_1</UnderlyingIndexName>
+    </key>
+    <key id="109" parent="20" name="unique_id">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_trails_1</UnderlyingIndexName>
+    </key>
+    <key id="110" parent="20" name="unique_iconimageid">
+      <ColNames>icon_image_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_trails_2</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
